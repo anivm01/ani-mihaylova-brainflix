@@ -1,0 +1,43 @@
+@use "./breakpoints"as*;
+@use "./colors"as*;
+
+h1 {
+    color: $primary-text;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    @include tablet {
+        font-size: 2.0625rem;
+        line-height: 2.75rem;
+    }
+}
+
+h2 {
+    color: $primary-text;
+    font-size: .75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+
+h3 {
+    color: $primary-text;
+    font-size: .8125rem;
+    line-height: 1.125rem;
+    font-weight: 700;
+    @include tablet {
+        font-size: .875rem;
+        line-height: 1.375rem;
+    }
+}
+
+p {
+    color: $primary-text;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    @include tablet {
+        font-size: .875rem;
+        line-height: 1.375rem;
+        font-weight: 400;
+    }
+}
