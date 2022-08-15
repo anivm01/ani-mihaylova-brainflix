@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__logo{
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    &__profile-pic {
+        border-radius: 50%;
+        height: 2.25rem;
+        width: 2.25rem;
+        object-fit: cover;
+        object-position: left;
+    }
+
+ 
+}
