@@ -22,11 +22,14 @@
 
     &__icon {
         height: 1.25rem;
+        padding-left: .5rem;
     }
     &__text{
         font-size: .75rem;
         line-height: 1.25rem;
         font-weight: 700;
-        padding: .625rem 2rem .625rem 1.5rem;
+        padding: .625rem 0;
+        width: 100%;
+        margin-right: 1rem;        
     }
 }
