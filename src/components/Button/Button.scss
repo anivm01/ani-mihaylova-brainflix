@@ -1,0 +1,32 @@
+@use "../../styles/partials/colors"as*;
+@use "../../styles/partials/breakpoints"as*;
+
+.button {
+    text-transform: uppercase;
+    text-align: center;
+    color: $cta-text;
+    background-color: $primary-cta;
+    border-radius: .25rem;
+    border: none;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    @include tablet {
+        min-width: 9.375rem;
+    }
+    
+
+    &:hover {
+        background-color: $cta-hover;
+    }
+
+    &__icon {
+        height: 1.25rem;
+    }
+    &__text{
+        font-size: .75rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+        padding: .625rem 2rem .625rem 1.5rem;
+    }
+}

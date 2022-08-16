@@ -2,6 +2,7 @@ import './Header.scss'
 import logo from "../../assets/images/BrainFlix-logo.svg"
 import profile from "../../assets/images/Mohan-muruge.jpg"
 
+
 function Header () {
     return(
         <header className="header">
