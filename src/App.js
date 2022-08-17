@@ -1,4 +1,5 @@
 import './App.scss';
+import CommentForm from './components/CommentForm/CommentForm';
 import Details from './components/Details/Details';
 import Header from './components/Header/Header';
 import Video from './components/Video/Video';
@@ -18,7 +19,9 @@ function App() {
       views={featuredVideo.views}
       likes={featuredVideo.likes}
       description={featuredVideo.description} />
+    <CommentForm />
     </>
+
   );
 }
 
