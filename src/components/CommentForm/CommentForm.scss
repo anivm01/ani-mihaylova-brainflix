@@ -21,6 +21,10 @@
         object-fit: cover;
         object-position: left;
         margin: 1.3rem 1rem 1rem 0;
+        @include tablet {
+            height: 3rem;
+            width: 3rem;
+        }
     }
     &__form {
         width: 100%;

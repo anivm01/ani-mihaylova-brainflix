@@ -1,7 +1,7 @@
-import DateComponent from "../DateComponent/DateComponent";
 import "./Details.scss";
 import viewsIcon from "../../assets/images/views.svg";
 import likesIcon from "../../assets/images/likes.svg";
+import formatDate from "../../utilities/utillities";
 
 function Details (props) {
 
@@ -11,7 +11,7 @@ function Details (props) {
             <div className="details__container">
                 <div className="details__stack">
                     <h3 className="details__channel">By {props.channel}</h3>
-                    <DateComponent secondaryClass="details__date" timestamp={props.timestamp}/>
+                    <span className="details__date">{formatDate(props.timestamp)}</span>
                 </div>
                 <div className="details__stack">
                     <span className="details__pair">

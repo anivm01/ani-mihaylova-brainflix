@@ -1,4 +1,5 @@
 import './App.scss';
+import Comment from './components/Comment/Comment';
 import CommentForm from './components/CommentForm/CommentForm';
 import Details from './components/Details/Details';
 import Header from './components/Header/Header';
@@ -20,6 +21,11 @@ function App() {
       likes={featuredVideo.likes}
       description={featuredVideo.description} />
     <CommentForm />
+    <Comment 
+      name={featuredVideo.comments[0].name}
+      content={featuredVideo.comments[0].comment}
+      timestamp={featuredVideo.comments[0].timestamp} />
+    
     </>
 
   );
