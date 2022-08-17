@@ -6,16 +6,16 @@
     justify-content: center;
     background-color: $video-player-components;
     width: 100%;
+    @include tablet {
+        padding: 0 2.25rem;
+    }
+    
 
     &__player {
         aspect-ratio: 16/9;
         width: 100%;
-        @include tablet {
-            // width: calc(100% - 4.5rem);
-            // margin: 0 auto;
-        }
         @include desktop {
-            max-width: 65rem;
+            max-width: 60rem;
             margin: 0 auto;
         }
     }

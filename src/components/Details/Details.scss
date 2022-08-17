@@ -9,8 +9,70 @@
     }
     @include desktop {
         max-width: 65rem;
+        margin: 0 auto;
     }
     &__title {
         padding: 1.5rem 0 1rem 0;
+    }
+    &__container {
+        display: flex;
+        border-bottom: 1px solid $divider-form-outline;
+        border-top: 1px solid $divider-form-outline;
+        padding: .5rem 0;
+        @include tablet {
+            padding: 1rem 0;
+            justify-content: space-between;
+        }
+    }
+    &__stack {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-basis: auto;
+            flex-direction: row;
+        }
+    }
+    &__channel {
+        font-weight: bold;
+        margin: .375rem 0;
+        @include tablet {
+            margin: 0 2rem 0 0;
+        }
+    }
+    &__date {
+        margin: .375rem 0;
+        @include tablet {
+            margin: 0;
+        }
+    }
+    &__pair {
+        margin: .375rem 0;
+        @include tablet {
+            margin: 0 2rem 0 0;
+        }
+    }
+    &__stats{
+        color: $text-label;
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 400;        
+        @include tablet {
+            margin: .5rem 0;
+            font-size: .875rem;
+            line-height: 1.375rem;
+            font-weight: 400;
+        }
+    }
+    &__icon {
+        height: .8125rem;
+        transform: translateY(2px);
+        margin-right: .5rem;
+    }
+    &__description {
+        margin: 1rem 0;
+        @include tablet {
+            margin: 2rem 0;
+        }
     }
 }

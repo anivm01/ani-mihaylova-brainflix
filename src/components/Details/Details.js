@@ -1,6 +1,7 @@
 import DateComponent from "../DateComponent/DateComponent";
-import "./Details.scss"
-
+import "./Details.scss";
+import viewsIcon from "../../assets/images/views.svg";
+import likesIcon from "../../assets/images/likes.svg";
 
 function Details (props) {
 
@@ -8,12 +9,22 @@ function Details (props) {
         <section className="details">
             <h1 className="details__title">{props.title}</h1>
             <div className="details__container">
-                <span className="details__creator"></span>
-                <DateComponent timestamp={props.timestamp}/>
-                <span className="details__views"><img className="details__views-icon" /></span>
-                <span className="details__likes"><img className="details__likes-icon" /></span>
+                <div className="details__stack">
+                    <h3 className="details__channel">By {props.channel}</h3>
+                    <DateComponent secondaryClass="details__date" timestamp={props.timestamp}/>
+                </div>
+                <div className="details__stack">
+                    <span className="details__pair">
+                        <img src={viewsIcon} alt="views icon" className="details__icon" />
+                        <span className="details__stats">{props.views}</span>
+                    </span>
+                    <span className="details__pair">
+                        <img src={likesIcon} alt="likes icon" className="details__icon" />
+                        <span className="details__stats">{props.likes}</span>
+                    </span>
+                </div>
             </div>
-            <p className="details__description"></p>
+            <p className="details__description">{props.description}</p>
         </section>
     )
 }

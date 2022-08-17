@@ -12,7 +12,7 @@ function DateComponent(props) {
     date = `${month}/${day}/${year}`;
 
     return (
-        <span className="date">{date}</span>
+        <span className={`date ${props.secondaryClass}`}>{date}</span>
     )
 }
 

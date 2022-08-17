@@ -13,7 +13,11 @@ function App() {
     <Video image={featuredVideo.image} />
     <Details 
       title={featuredVideo.title}
-      timestamp={featuredVideo.timestamp} />
+      timestamp={featuredVideo.timestamp}
+      channel={featuredVideo.channel}
+      views={featuredVideo.views}
+      likes={featuredVideo.likes}
+      description={featuredVideo.description} />
     </>
   );
 }
