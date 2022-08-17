@@ -3,15 +3,14 @@
 
 .comment-form {
     display: flex;
-    padding: 1rem;
     align-items: flex-start;
-    @include tablet {
-        padding: 2.25rem;
-    }
+    border-bottom: 1px $divider-form-outline solid;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     @include desktop {
-        padding: 0;
+        padding-bottom: 1rem;
         max-width: 65rem;
-        margin: 0 auto;
+        margin: 0 auto 1rem auto;
     }
 
     &__profile-pic {

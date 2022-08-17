@@ -11,7 +11,6 @@ function Comment (props) {
                 <p className="comment__content">{props.content}</p>
             </div>
         </div>
-        
     )
 }
 
