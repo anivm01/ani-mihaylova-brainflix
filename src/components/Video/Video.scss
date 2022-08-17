@@ -1,0 +1,22 @@
+@use "../../styles/partials/colors"as*;
+@use "../../styles/partials/breakpoints"as*;
+
+.video {
+    display: flex;
+    justify-content: center;
+    background-color: $video-player-components;
+    width: 100%;
+
+    &__player {
+        aspect-ratio: 16/9;
+        width: 100%;
+        @include tablet {
+            // width: calc(100% - 4.5rem);
+            // margin: 0 auto;
+        }
+        @include desktop {
+            max-width: 65rem;
+            margin: 0 auto;
+        }
+    }
+}
