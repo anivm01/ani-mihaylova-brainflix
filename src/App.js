@@ -2,6 +2,7 @@ import './App.scss';
 import Comments from './components/Comments/Comments';
 import Details from './components/Details/Details';
 import Header from './components/Header/Header';
+import NextVideoList from './components/NextVideoList/NextVideoList';
 import Video from './components/Video/Video';
 import videos from "./data/video-details.json";
 
@@ -21,6 +22,7 @@ function App() {
       likes={featuredVideo.likes}
       description={featuredVideo.description} />
     <Comments commentsArray={comments} />
+    <NextVideoList />
     
     </>
 

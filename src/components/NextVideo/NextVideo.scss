@@ -1,0 +1,31 @@
+@use "../../styles/partials/breakpoints"as*;
+@use "../../styles/partials/colors"as*;
+
+.next-video {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    &__image {
+        width: 35%;
+        border-radius: .25rem;
+        background-color: $divider-form-outline;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+
+    }
+    &__info {
+        width: 65%;
+        margin-left: 1rem;
+    }
+    &__title{
+        font-weight: 700;
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 700;
+        @include tablet {
+            font-size: .8125rem;
+            line-height: 1.125rem;
+            font-weight: 700;
+        }
+    }
+}

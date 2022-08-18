@@ -1,0 +1,17 @@
+@use "../../styles/partials/breakpoints"as*;
+@use "../../styles/partials/colors"as*;
+
+.next-video-list {
+    padding: 0 1rem 1rem 1rem;
+    max-width: 20rem;
+    @include tablet {
+        padding: 0 0 1rem 0;
+        margin-left: 2.25rem;
+    }
+
+    &__title {
+        color: $text-label;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+}
