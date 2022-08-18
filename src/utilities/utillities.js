@@ -10,4 +10,14 @@ function formatDate(timestamp) {
     return date = `${month}/${day}/${year}`;
 }
 
+
 export default formatDate;
+
+export function truncatedTitle(title) {
+    if (title.length > 40) {
+          let  truncatedTitle = title.substring(0, title.lastIndexOf(" ")) + "...";
+          return truncatedTitle
+          }
+    else return title
+          
+    }

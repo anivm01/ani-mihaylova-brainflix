@@ -8,6 +8,9 @@
         padding: 0 0 1rem 0;
         margin-left: 2.25rem;
     }
+    @include desktop {
+        padding-top: 1.5rem;
+    }
 
     &__title {
         color: $text-label;

@@ -2,6 +2,7 @@
 @use "../../styles/partials/breakpoints"as*;
 
 .video {
+    flex-basis: 100%;
     display: flex;
     justify-content: center;
     background-color: $video-player-components;

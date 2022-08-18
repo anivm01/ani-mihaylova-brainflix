@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
+    cursor: pointer;
     &__image {
         width: 35%;
         border-radius: .25rem;
@@ -21,7 +22,7 @@
         font-weight: 700;
         font-size: .8125rem;
         line-height: 1.125rem;
-        font-weight: 700;
+        font-weight: 700;       
         @include tablet {
             font-size: .8125rem;
             line-height: 1.125rem;
