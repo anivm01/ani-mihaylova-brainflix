@@ -10,10 +10,11 @@ import { useState } from "react";
 function Main() {
     const [featuredVideo, setFeaturedVideo] = useState(videos[0]);
     
-    function handleVideoSelection (videoId) {
+    function handleVideoSelection (nextVideoId) {
         videos.forEach((video)=>{
-            if (videoId === video.id)
+            if (nextVideoId === video.id)
             setFeaturedVideo(video)
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
         })
     };
 
