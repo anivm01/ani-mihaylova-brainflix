@@ -1,14 +1,21 @@
 import './App.scss';
 import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import VideoPage from './pages/VideoPage';
+import HomePage from './pages/HomePage';
+
 
 
 function App() {
   return (
-    <>
-    <Header />
-    <Main />
-    </>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />}/>
+        <Route path="video/:videoId" element={<VideoPage />} />
+        
+      </Routes>    
+    </BrowserRouter>
 
   );
 }
