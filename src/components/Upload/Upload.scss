@@ -1,0 +1,119 @@
+@use "../../styles/partials/breakpoints"as*;
+@use "../../styles/partials/colors"as*;
+
+.upload {
+    padding: 0 1rem;
+    border-top: $divider-form-outline 1px solid;
+    @include tablet {
+        padding: 0 2.25rem;
+    }
+    @include desktop {
+        padding: 0;
+        max-width: 65rem;
+        margin: 0 auto;
+    }
+    &__title {
+        padding: 1.5rem 0 1rem 0;
+        @include tablet {
+            padding-top: 2rem;
+        }
+    }    
+    &__form {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            max-width: 100%;
+            border-top: $divider-form-outline 1px solid;
+            padding-top: 1.5rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+    &__label {
+        color: $text-label;
+        text-transform: uppercase;
+        font-size: .75rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        &:first-of-type {
+            @include tablet {
+                flex-basis: 50%;
+            }
+            @include desktop {
+                flex-basis: 28.5%;
+            }
+        }
+    }
+    &__thumbnail {
+        aspect-ratio: 16/9;
+        width: 100%;
+        margin-bottom: 1rem;
+        @include desktop {
+            margin-bottom: 0;
+        }
+    }
+    &__text {
+        @include tablet {
+            flex-basis: 100%;
+        }
+        @include desktop {
+            flex-basis: 71.5%;
+            padding-left: 1rem;
+        }
+    }
+    &__field {
+        background-color: $form-background;
+        height: 2.5rem;
+        font-family: "Avenir Next";
+        font-size: .8125rem;
+        line-height: 1.4rem;
+        font-weight: 400;
+        width: 100%;
+        border: 1px solid $divider-form-outline;
+        border-radius: .25rem;
+        padding: .5rem;
+        resize: none;
+        margin-bottom: .75rem;
+        @include tablet {
+            flex-grow: 1;
+        }
+
+        &::placeholder {
+            opacity: 1;
+            color: $primary-text;
+        }
+
+        &:focus {
+            outline-color: $primary-cta;
+        }
+        &--textarea {
+            height: 6rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include tablet {
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            border-top: $divider-form-outline 1px solid;
+            flex-basis: 100%;
+        }
+    }
+    &__cancel {
+        color: $primary-cta;
+        font-size: .75rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+        padding: .625rem 0;
+        margin: 1.5rem 0;
+        text-transform: uppercase;
+        @include tablet {
+            margin-right: 3rem;
+        }
+    }
+}

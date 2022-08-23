@@ -11,6 +11,8 @@ function CommentForm () {
                 <h2 className="comment-form__title">Join the conversation</h2>
                 <textarea name="comment" className="comment-form__input" placeholder="Add a new comment"></textarea>
                 <Button 
+                isButton={true}
+                link = ""
                 icon = {commentIcon}
                 iconText = "comment icon"
                 buttonText = "Comment"

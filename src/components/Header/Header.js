@@ -14,7 +14,9 @@ function Header () {
                 <input type="text" className="header__input" placeholder="Search" />
             </form>
             <img src={profile} alt="Mohan in profile" className="header__profile-pic" />
-            <Button 
+            <Button
+            isButton={false}
+            link = "/upload" 
             icon = {uploadIcon}
             iconText = "upload icon"
             buttonText = "Upload"
