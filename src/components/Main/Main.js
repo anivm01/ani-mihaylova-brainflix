@@ -5,10 +5,9 @@ import Video from "../Video/Video";
 import "./Main.scss";
 import videos from "../../data/video-details.json";
 import videosList from "../../data/videos.json"
-import { useState } from "react";
+// import { useState } from "react";
 
-function Main() {
-    const [featuredVideo, setFeaturedVideo] = useState(videos[0]);
+function Main( {featuredVideo, setFeaturedVideo }) {
     
     function handleVideoSelection (nextVideoId) {
         videos.forEach((video)=>{

@@ -3,13 +3,14 @@ import logo from "../../assets/images/BrainFlix-logo.svg"
 import profile from "../../assets/images/Mohan-muruge.jpg"
 import Button from '../Button/Button'
 import uploadIcon from "../../assets/images/upload.svg"
+import { Link } from "react-router-dom";
 
 function Header () {
     return(
         <header className="header">
-            <a href="/" className="header__logo">
+            <Link to="/" className="header__logo">
                 <img src={logo}  alt="Brainflix Logo" />
-            </a>
+            </Link>
             <form className="header__search">
                 <input type="text" className="header__input" placeholder="Search" />
             </form>
