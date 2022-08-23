@@ -15,7 +15,6 @@ function App() {
         <Route path="/" element={<HomePage />}/>
         <Route path="video/:videoId" element={<VideoPage />} />
         <Route path="upload" element={<UploadPage />} />
-        
       </Routes>    
     </BrowserRouter>
 
