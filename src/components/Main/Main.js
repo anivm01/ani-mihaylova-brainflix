@@ -6,6 +6,7 @@ import "./Main.scss";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { fetchVideos, fetchVideoByID } from "../../utilities/api"
+import Loading from "../Loading/Loading";
 
 function Main() {
     const [videosList, setVideosList] = useState([]);
@@ -30,7 +31,7 @@ function Main() {
     }, [videoId]);
 
     if (!featuredVideo) {
-        return <h2>Loading....</h2>
+        return <Loading />
     }
 
     const nonFeaturedVideos = videosList.filter((nextVideo)=>nextVideo.id !== featuredVideo.id)
