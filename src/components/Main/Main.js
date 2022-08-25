@@ -19,7 +19,7 @@ function Main() {
         .then(response => {      
                 console.log(`use effect is running`)     
                 setVideosList(response.data);
-                const selectedvideoId = videoId || response.data[0].id;
+                let selectedvideoId = videoId || response.data[0].id;
                 return fetchVideoByID(selectedvideoId)
             })
             .then((videoDetails)=>{
