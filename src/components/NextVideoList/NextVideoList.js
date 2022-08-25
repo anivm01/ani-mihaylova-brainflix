@@ -1,7 +1,7 @@
 import "./NextVideoList.scss";
 import NextVideo from "../NextVideo/NextVideo";
 
-function NextVideoList({videosList, handleVideoSelection}){
+function NextVideoList({videosList}){
     return (
         <section className="next-video-list">
             <h2 className="next-video-list__title">Next Videos</h2>
@@ -9,7 +9,6 @@ function NextVideoList({videosList, handleVideoSelection}){
                 (nextVideo) => {
                     return (
                         <NextVideo
-                            handleVideoSelection={handleVideoSelection}
                             id={nextVideo.id}
                             key={nextVideo.id}
                             image={nextVideo.image}

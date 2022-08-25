@@ -7,7 +7,7 @@ function CommentForm () {
     return (
         <div className="comment-form">
             <img src={profile} alt="Mohan in profile" className="comment-form__profile-pic" />
-            <form className="comment-form__form">
+            <form onSubmit={(event)=>{event.preventDefault()}} className="comment-form__form">
                 <h2 className="comment-form__title">Join the conversation</h2>
                 <textarea name="comment" className="comment-form__input" placeholder="Add a new comment"></textarea>
                 <Button 

@@ -11,7 +11,7 @@ function Header () {
             <Link to="/" className="header__logo">
                 <img src={logo}  alt="Brainflix Logo" />
             </Link>
-            <form className="header__search">
+            <form onSubmit={(event)=>{event.preventDefault()}}className="header__search">
                 <input type="text" className="header__input" placeholder="Search" />
             </form>
             <img src={profile} alt="Mohan in profile" className="header__profile-pic" />

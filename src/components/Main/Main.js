@@ -3,41 +3,57 @@ import Details from "../Details/Details";
 import NextVideoList from "../NextVideoList/NextVideoList";
 import Video from "../Video/Video";
 import "./Main.scss";
-import videos from "../../data/video-details.json";
-import videosList from "../../data/videos.json"
-// import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"
+import { fetchVideos, fetchVideoByID } from "../../utilities/api"
 
-function Main( {featuredVideo, setFeaturedVideo }) {
-    
-    function handleVideoSelection (nextVideoId) {
-        videos.forEach((video)=>{
-            if (nextVideoId === video.id)
-            setFeaturedVideo(video)
-            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-        })
-    };
+
+function Main() {
+    const [videosList, setVideosList] = useState([]);
+    const [featuredVideo, setFeaturedVideo] = useState();
+    const {videoId} = useParams()
+
+    useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+        fetchVideos()    
+        .then(response => {      
+                console.log(`use effect is running`)     
+                setVideosList(response.data);
+                const selectedvideoId = videoId || response.data[0].id;
+                return fetchVideoByID(selectedvideoId)
+            })
+            .then((videoDetails)=>{
+                setFeaturedVideo(videoDetails.data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, [videoId]);
+
+    if (!featuredVideo) {
+        return <h2>Loading....</h2>
+    }
 
     const nonFeaturedVideos = videosList.filter((nextVideo)=>nextVideo.id !== featuredVideo.id)
-    const comments = featuredVideo.comments;
 
-  return (
-    <main className="main">
-        <Video image={featuredVideo.image} />
-        <div className="main__container">
-            <div className="main__featured">
-                <Details
-                    title={featuredVideo.title}
-                    timestamp={featuredVideo.timestamp}
-                    channel={featuredVideo.channel}
-                    views={featuredVideo.views}
-                    likes={featuredVideo.likes}
-                    description={featuredVideo.description} />
-                <Comments commentsArray={comments} />
+    return (
+        <main className="main">
+            <Video image={featuredVideo.image} />
+            <div className="main__container">
+                <div className="main__featured">
+                    <Details
+                        title={featuredVideo.title}
+                        timestamp={featuredVideo.timestamp}
+                        channel={featuredVideo.channel}
+                        views={featuredVideo.views}
+                        likes={featuredVideo.likes}
+                        description={featuredVideo.description} />
+                    <Comments commentsArray={featuredVideo.comments} />
+                </div>
+                <NextVideoList videosList={nonFeaturedVideos}/>
             </div>
-            <NextVideoList videosList={nonFeaturedVideos} handleVideoSelection={handleVideoSelection}/>
-        </div>
-    </main>
-  )
+        </main>
+    )
 }
 
 export default Main

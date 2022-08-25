@@ -42,7 +42,7 @@ function Upload () {
                     <Link to="/" className="upload__cancel"> Cancel</Link>
                 </div>
             </form>
-            <UploadComplete visible={visible}/>
+            <UploadComplete visible={visible} setVisible={setVisible}/>
         </main>
     )
 }
