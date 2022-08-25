@@ -12,7 +12,6 @@
         max-width: 65rem;
         margin: 0 auto 1rem auto;
     }
-
     &__profile-pic {
         border-radius: 50%;
         height: 2.25rem;
@@ -60,12 +59,10 @@
             height: 2.5rem;
             width: auto;
         }
-
         &::placeholder {
             opacity: 1;
             color: $primary-text;
         }
-
         &:focus {
             outline-color: $primary-cta;
         }

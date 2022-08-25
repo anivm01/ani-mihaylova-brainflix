@@ -9,10 +9,12 @@ import {useState} from 'react'
 
 function Upload () {
     const [visible, setVisible] = useState(false)
+    
     function handlePublish(event) {
         event.preventDefault()  
         setVisible(true)
     }
+
     return (
         <main className="upload">
             <h1 className="upload__title" >Upload Video</h1>
@@ -33,7 +35,6 @@ function Upload () {
                 </div>
                 <div className="upload__actions" >
                     <Button 
-                    // onClick={()=>setVisible(true)}
                     isButton={true}
                     icon = {publishIcon}
                     iconText = "publish icon"

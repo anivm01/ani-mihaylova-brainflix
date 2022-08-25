@@ -17,9 +17,6 @@ function Button ({icon, iconText, buttonText, isButton, link}){
             <span className="button__text">{buttonText}</span>
         </Link>)
     }
-
-
-    
 }
 
 export default Button;

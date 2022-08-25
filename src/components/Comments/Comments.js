@@ -17,8 +17,6 @@ function Comments (props) {
                 )
             })}
         </section>
-              
-
     )
 }
 

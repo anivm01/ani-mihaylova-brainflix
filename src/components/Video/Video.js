@@ -6,7 +6,6 @@ function Video ({ image }) {
             <video className="video__player" poster={image} controls="controls"></video>
         </div>
     )
-
 }
 
 export default Video

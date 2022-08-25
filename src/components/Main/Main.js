@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { fetchVideos, fetchVideoByID } from "../../utilities/api"
 
-
 function Main() {
     const [videosList, setVideosList] = useState([]);
     const [featuredVideo, setFeaturedVideo] = useState();

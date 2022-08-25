@@ -19,7 +19,6 @@ function CommentForm () {
                 />
             </form>
         </div>
-
     )
 }
 

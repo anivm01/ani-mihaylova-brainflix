@@ -2,14 +2,12 @@
 @use "../../styles/partials/colors"as*;
 
 .main {
-
     &__container {
         display: flex;
         flex-wrap: wrap;
         @include desktop {
             max-width: 65rem;
             margin: 0 auto;
-            
         }
     }
     &__featured {

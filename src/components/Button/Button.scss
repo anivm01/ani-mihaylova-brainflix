@@ -14,12 +14,9 @@
     @include tablet {
         max-width: 9.375rem;
     }
-    
-
     &:hover {
         background-color: $cta-hover;
     }
-
     &__icon {
         height: 1.25rem;
         padding-left: .5rem;

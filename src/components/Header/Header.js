@@ -22,7 +22,6 @@ function Header () {
             iconText = "upload icon"
             buttonText = "Upload"
             />
-            
         </header>
     )
 }
