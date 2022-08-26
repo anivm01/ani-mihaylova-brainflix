@@ -7,10 +7,12 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { fetchVideos, fetchVideoByID } from "../../utilities/api"
 import Loading from "../Loading/Loading";
+import Error from '../Error/Error';
 
 function Main() {
     const [videosList, setVideosList] = useState([]);
     const [featuredVideo, setFeaturedVideo] = useState();
+    const [isError, setIsError] = useState(false);
     const {videoId} = useParams()
 
     useEffect(() => {
@@ -19,16 +21,33 @@ function Main() {
         .then(response => {      
                 console.log(`use effect is running`)     
                 setVideosList(response.data);
-                let selectedvideoId = videoId || response.data[0].id;
-                return fetchVideoByID(selectedvideoId)
+//                let selectedvideoId = videoId || response.data[0].id;
+//                return fetchVideoByID(selectedvideoId)
             })
-            .then((videoDetails)=>{
-                setFeaturedVideo(videoDetails.data)
-            })
-            .catch(error => {
+//            .then((videoDetails)=>{
+//                setFeaturedVideo(videoDetails.data)
+//            })
+            .catch((error) => {
                 console.log(error)
             })
-    }, [videoId]);
+    }, []);
+
+    useEffect (()=>{
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+        fetchVideoByID(videoId || "84e96018-4022-434e-80bf-000ce4cd12b8")
+        .then(response => {
+            setFeaturedVideo(response.data)
+        })
+        .catch( ()=> {
+            setIsError(true)
+        }
+        )
+
+    }, [videoId])
+
+    if (isError) {
+        return <Error />
+    }
 
     if (!featuredVideo) {
         return <Loading />
