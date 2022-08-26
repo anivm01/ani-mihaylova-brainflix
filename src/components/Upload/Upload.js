@@ -26,13 +26,13 @@ function Upload () {
                     <img className="upload__thumbnail" src={placeholderImage} alt="video preview placeholder"/>
                 </label>
                 <div className="upload__text">
-                    <label className="upload__label">
+                    <label htmlFor="video-title" className="upload__label">
                         Title Your Video
-                        <input className="upload__field upload__field--input" type="text" placeholder="Add a title to your video" />
+                        <input className="upload__field upload__field--input" type="text" id="video-title" name="video-title" placeholder="Add a title to your video" />
                     </label>
-                    <label className="upload__label">
+                    <label htmlFor="video-description" className="upload__label">
                         Add a Video Description
-                        <textarea className="upload__field upload__field--textarea" placeholder="Add a description to your video"></textarea>
+                        <textarea className="upload__field upload__field--textarea" id="video-description" name="video-description"  placeholder="Add a description to your video"></textarea>
                     </label>
                 </div>
                 <div className="upload__actions" >
