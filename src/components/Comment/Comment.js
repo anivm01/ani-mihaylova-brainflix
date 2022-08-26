@@ -1,6 +1,8 @@
 import "./Comment.scss";
 import formatDate from "../../utilities/utillities";
 
+//Component used to create and style a single comment
+
 function Comment (props) {
     return (
         <div className="comment">

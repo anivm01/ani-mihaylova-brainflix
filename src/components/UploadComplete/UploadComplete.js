@@ -2,6 +2,9 @@ import "./UploadComplete.scss"
 import {Link} from "react-router-dom"
 import closeButton from "../../assets/images/close.svg"
 
+//popup that appers when publish button on upload page is clicked
+//allows navigation back to home page
+
 function UploadComplete ( {visible, setVisible} ) {
     if (visible){
         return (

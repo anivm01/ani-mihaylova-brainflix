@@ -6,6 +6,8 @@ import {Link } from "react-router-dom";
 import UploadComplete from "../UploadComplete/UploadComplete";
 import {useState} from 'react'
 
+//component that renders when upload button on header is clicked
+// contains a form to upload a new video
 
 function Upload () {
     const [visible, setVisible] = useState(false)

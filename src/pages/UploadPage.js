@@ -1,12 +1,10 @@
 import Upload from "../components/Upload/Upload";
-// import UploadComplete from "../components/UploadComplete/UploadComplete";
+
+//page renders when "/upload" is called
+
 function UploadPage () {
-    
     return (
-        <>
             <Upload />
-            {/* <UploadComplete/> */}
-        </>
     )
 }
 export default UploadPage;

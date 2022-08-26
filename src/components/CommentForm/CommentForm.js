@@ -3,6 +3,9 @@ import "./CommentForm.scss"
 import commentIcon from "../../assets/images/add_comment.svg"
 import profile from "../../assets/images/Mohan-muruge.jpg"
 
+// form component can be used to post comments
+// form functionality currently disabled 
+
 function CommentForm () {
     return (
         <div className="comment-form">

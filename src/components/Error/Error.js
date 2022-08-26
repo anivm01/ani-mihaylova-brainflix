@@ -1,6 +1,8 @@
 import "./Error.scss"
 import error from "../../assets/images/error.svg"
 
+//Displays an error message if a promise catches an error
+
 function Error() {
   return (
     <div className="error">

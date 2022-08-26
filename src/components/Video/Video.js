@@ -1,5 +1,8 @@
 import "./Video.scss"
 
+//renders the video player with the currently selected video. 
+//currently only displays the video poster, video itself is unavailable
+
 function Video ({ image }) {
     return (
         <div className="video">

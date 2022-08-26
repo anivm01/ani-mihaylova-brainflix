@@ -1,11 +1,13 @@
-import './Header.scss'
+import './PageHeader.scss'
 import logo from "../../assets/images/BrainFlix-logo.svg"
 import profile from "../../assets/images/Mohan-muruge.jpg"
 import Button from '../Button/Button'
 import uploadIcon from "../../assets/images/upload.svg"
 import { Link } from "react-router-dom";
 
-function Header () {
+//component renders as header on every page
+
+function PageHeader () {
     return(
         <header className="header">
             <Link to="/" className="header__logo">
@@ -26,4 +28,4 @@ function Header () {
     )
 }
 
-export default Header;
+export default PageHeader;

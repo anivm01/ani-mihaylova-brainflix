@@ -1,5 +1,5 @@
 import './App.scss';
-import Header from './components/Header/Header';
+import Header from './components/PageHeader/PageHeader';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import VideoPage from './pages/VideoPage';
 import HomePage from './pages/HomePage';

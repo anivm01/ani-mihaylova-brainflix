@@ -1,6 +1,9 @@
 import "./Button.scss"
 import { Link } from "react-router-dom";
 
+//Button component to be used to handle both links and buttons
+//and create consistency in styling
+
 function Button ({icon, iconText, buttonText, isButton, link}){
 
     if (isButton) {
