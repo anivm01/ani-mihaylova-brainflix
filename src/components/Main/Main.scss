@@ -12,7 +12,8 @@
     }
     &__featured {
         @include desktop {
-            flex-basis: 65%;
+            flex-basis: 69%;
+            border-right: 1px solid $divider-form-outline;
         }
     }
 }

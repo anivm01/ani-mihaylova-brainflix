@@ -10,6 +10,8 @@
     }
     @include desktop {
         padding-top: 1.5rem;
+        margin-left: 0;
+        padding-left: 1.5rem;
     }
     &__title {
         color: $text-label;

@@ -9,9 +9,15 @@
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     @include desktop {
-        padding: 1rem 0;
+        padding: 1rem 1.5rem 1rem 0;
         max-width: 65rem;
         margin: 0 auto;
+    }
+    &:last-of-type {
+        @include desktop {
+            border-bottom: none;
+            padding-bottom: 2rem;
+        }
     }
     &__image {
         background-color: $divider-form-outline;
