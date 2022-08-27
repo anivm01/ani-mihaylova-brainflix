@@ -15,26 +15,35 @@ function Main() {
     const [isError, setIsError] = useState(false);
     const {videoId} = useParams()
 
+    //useEffect hook to handle fetching video list from the api
+    //runs only on first page load 
+
     useEffect(() => {
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
         fetchVideos()    
         .then(response => {      
                 console.log(`use effect is running`)     
                 setVideosList(response.data);
-//                let selectedvideoId = videoId || response.data[0].id;
-//                return fetchVideoByID(selectedvideoId)
             })
-//            .then((videoDetails)=>{
-//                setFeaturedVideo(videoDetails.data)
-//            })
             .catch((error) => {
                 console.log(error)
             })
     }, []);
 
+    //useEffect hook to handle fetching the details about a 
+    //specific video based on it's id, runs when video list is populated 
+    //and generagets details about the first video in the video list
+    //and also whenever a new video id route is selected, generating
+    //details about that video
+
     useEffect (()=>{
+        if (videosList.length <=0) {
+            console.log("early return")
+            return
+        }
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
-        fetchVideoByID(videoId || "84e96018-4022-434e-80bf-000ce4cd12b8")
+        let selectedvideoId = videoId || videosList[0].id;
+        fetchVideoByID(selectedvideoId)
         .then(response => {
             setFeaturedVideo(response.data)
         })
@@ -43,7 +52,7 @@ function Main() {
         }
         )
 
-    }, [videoId])
+    }, [videoId, videosList])
 
     if (isError) {
         return <Error />

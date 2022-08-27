@@ -1,6 +1,6 @@
 import './App.scss';
 import Header from './components/PageHeader/PageHeader';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import VideoPage from './pages/VideoPage';
 import HomePage from './pages/HomePage';
 import UploadPage from './pages/UploadPage';
@@ -15,6 +15,7 @@ function App() {
         <Route path="video/:videoId" element={<VideoPage />} />
         <Route path="upload" element={<UploadPage />} />
         <Route path="loading" element={<Loading />} />
+        <Route path="*" element={<Navigate to="/"/>} />
       </Routes>    
     </BrowserRouter>
   );
