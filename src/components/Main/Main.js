@@ -30,11 +30,9 @@ function Main() {
             })
     }, []);
 
-    //useEffect hook to handle fetching the details about a 
-    //specific video based on it's id, runs when video list is populated 
-    //and generagets details about the first video in the video list
-    //and also whenever a new video id route is selected, generating
-    //details about that video
+    //useEffect hook generates video details from api by video id
+    //runs after video list is populated 
+    //also runs whenever a new video id route is selected
 
     useEffect (()=>{
         if (videosList.length <=0) {
@@ -51,18 +49,20 @@ function Main() {
             setIsError(true)
         }
         )
-
     }, [videoId, videosList])
 
+//early return if video id url is wrong or if api has issues
     if (isError) {
         return <Error />
     }
 
+//loading page while waiting for api response
     if (!featuredVideo) {
         return <Loading />
     }
-
-    const nonFeaturedVideos = videosList.filter((nextVideo)=>nextVideo.id !== featuredVideo.id)
+//filter to remove the featured video from the video list
+    const nonFeaturedVideos = videosList.filter((nextVideo)=>{
+        nextVideo.id !== featuredVideo.id})
 
     return (
         <main className="main">
