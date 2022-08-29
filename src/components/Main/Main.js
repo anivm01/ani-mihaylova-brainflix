@@ -62,7 +62,7 @@ function Main() {
     }
 //filter to remove the featured video from the video list
     const nonFeaturedVideos = videosList.filter((nextVideo)=>{
-        nextVideo.id !== featuredVideo.id})
+       return nextVideo.id !== featuredVideo.id})
 
     return (
         <main className="main">
