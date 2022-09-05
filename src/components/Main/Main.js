@@ -11,7 +11,7 @@ import Error from '../Error/Error';
 
 function Main() {
     const [videosList, setVideosList] = useState([]);
-    const [featuredVideo, setFeaturedVideo] = useState();
+    const [featuredVideo, setFeaturedVideo] = useState(null);
     const [isError, setIsError] = useState(false);
     const {videoId} = useParams()
 
@@ -19,15 +19,26 @@ function Main() {
     //runs only on first page load 
 
     useEffect(() => {
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
-        fetchVideos()    
-        .then(response => {      
-                console.log(`use effect is running`)     
-                setVideosList(response.data);
-            })
-            .catch((error) => {
-                console.log(error)
-            })
+        //api call and response is wrapped in a function used to trigger the api call again if it catches an error
+        //apiCallAttempts variable is used to track and limit the number of attempts.
+        let apiCallAttempts = 0;
+        function populateVideosList(){
+            if (apiCallAttempts === 2){
+                setIsError(true)
+                return
+            }
+            fetchVideos()    
+            .then(response => {      
+                    setVideosList(response.data);
+                })
+                .catch((error) => {
+                    populateVideosList()
+                    apiCallAttempts++
+                    console.log(error)
+                    console.log(apiCallAttempts)
+                })
+        }
+        populateVideosList()
     }, []);
 
     //useEffect hook generates video details from api by video id
@@ -36,7 +47,6 @@ function Main() {
 
     useEffect (()=>{
         if (videosList.length <=0) {
-            console.log("early return")
             return
         }
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -45,8 +55,9 @@ function Main() {
         .then(response => {
             setFeaturedVideo(response.data)
         })
-        .catch( ()=> {
+        .catch( (error)=> {
             setIsError(true)
+            console.log(error)
         }
         )
     }, [videoId, videosList])

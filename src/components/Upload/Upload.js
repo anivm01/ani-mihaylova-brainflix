@@ -40,6 +40,7 @@ function Upload () {
         })
         .catch(error=>{
             setIsError(true)
+            console.log(error)
         })
     }
 
